@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import Encabezado from './App';
+import Encabezado from './Componentes/NavBar';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
