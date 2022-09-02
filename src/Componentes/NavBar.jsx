@@ -4,8 +4,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import logo from '../imagenes/logo.png'
+import CartWidget from './CartWidget';
 
-function Encabezado() {
+function NavBar() {
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
@@ -17,7 +18,7 @@ function Encabezado() {
               height="30"
               className="d-inline-block align-top"
             />{' '}
-          POHLE-ART
+          NELAIN-ART
           </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
@@ -37,7 +38,7 @@ function Encabezado() {
             </NavDropdown>
           </Nav>
           <Nav>
-            <Nav.Link href="#deets" className="link-danger">Carrito</Nav.Link>
+            <Nav.Link href="#deets" className="link-danger"><CartWidget/></Nav.Link>
             <Nav.Link eventKey={2} href="#memes">
               Preguntas
             </Nav.Link>
@@ -48,4 +49,4 @@ function Encabezado() {
   );
 }
 
-export default Encabezado;
+export default NavBar;
