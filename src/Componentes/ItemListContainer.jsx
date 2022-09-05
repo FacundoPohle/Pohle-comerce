@@ -1,17 +1,18 @@
-import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import ItemCount from './ItemCount';
 
 
-function ItemListContainer(props) {
+function ItemListContainer({image, name, description}) {
+
   return (
-    <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src={props.image} />
+    <Card style={{ width: '18rem', margin: '2rem', padding: '1rem' }} >
+      <Card.Img variant="top" src={image} />
       <Card.Body>
-        <Card.Title className="text-center">{props.name}</Card.Title>
+        <Card.Title className="text-center">{name}</Card.Title>
         <Card.Text className="text-center">
-        {props.description}
+        {description}
         </Card.Text>
-        <Button variant="danger" className="ms-5">Agregar al carrito</Button>
+        <ItemCount stock={5} initial={0}/>
       </Card.Body>
     </Card>
   );
