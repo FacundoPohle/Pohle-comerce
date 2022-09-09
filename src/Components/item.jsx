@@ -1,21 +1,26 @@
 import Card from 'react-bootstrap/Card';
 import ItemCount from './ItemCount';
 
+function Item({image, name, description}) {
 
-function ItemListContainer({image, name, description}) {
+  const onAdd = (qty) => {
+        alert(`you have selected ${qty} items`)
+  }
 
   return (
-    <Card style={{ width: '18rem', margin: '2rem', padding: '1rem' }} >
+    <div className='col-12 col-lg-3 col-xxl-3'>
+      <Card style={{ width: '18rem', margin: '2rem', padding: '1rem' }} >
       <Card.Img variant="top" src={image} />
       <Card.Body>
         <Card.Title className="text-center">{name}</Card.Title>
         <Card.Text className="text-center">
         {description}
         </Card.Text>
-        <ItemCount stock={5} initial={0}/>
+        <ItemCount stock={5} initial={0} onAdd={onAdd}/>
       </Card.Body>
     </Card>
+    </div>
   );
 }
 
-export default ItemListContainer;
+export default Item;

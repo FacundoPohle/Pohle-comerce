@@ -1,17 +1,12 @@
-import NavBar from "./Componentes/NavBar";
+import NavBar from "./Components/NavBar";
 import './App.scss'
-import logo from './imagenes/logo.png';
-import ItemListContainer from "./Componentes/ItemListContainer";
+import ItemListContainer from "./Components/ItemListContainer";
 
 function App () {
   return (
     <div>
       <NavBar/>
-      <ItemListContainer
-      name="ZAPATOS"
-      description="confortables zapatos de cuero refinado"
-      image={logo}
-      />
+      <ItemListContainer/> 
     </div>
 
   )

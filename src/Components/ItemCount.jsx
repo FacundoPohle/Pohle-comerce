@@ -1,10 +1,10 @@
 import Button from 'react-bootstrap/Button';
-import  AddCircleIcon  from '@mui/icons-material/AddCircle';
+import AddCircleIcon from '@mui/icons-material/AddCircle';
 import RemoveCircleIcon from '@mui/icons-material/RemoveCircle';
 import { useState } from 'react';
 
 
-function ItemCount ({initial, stock}) {
+function ItemCount ({initial, stock, onAdd}) {
     
     const [rate, setRate] = useState(initial)
 
@@ -16,9 +16,9 @@ function ItemCount ({initial, stock}) {
         rate > initial  && setRate(rate-1)
    }  
    
-   const onAdd = () => {
-       rate > initial  && alert(`you have selected ${rate} items`)
-  }
+//    const onAdd = () => {
+//        rate > initial  && alert(`you have selected ${rate} items`)
+//   }
 
     return(
  <div className='row justify-content-center'>
@@ -32,7 +32,11 @@ function ItemCount ({initial, stock}) {
         <Button onClick={Minus} variant="danger"><RemoveCircleIcon/></Button>
     </div>
     <div className='row justify-content-center mt-4'>
-        <Button onClick={onAdd} variant="danger" >Agregar al carrito</Button>
+        {
+            stock && rate > initial
+            ?<Button onClick={ () => onAdd(rate)} variant="danger" >Agregar al carrito</Button>
+            :<Button variant="danger" >Agregar al carrito</Button>
+        }
     </div>    
 </div> );
 
