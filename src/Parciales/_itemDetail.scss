@@ -1,0 +1,23 @@
+.detail-contenedor {
+    @include flexbox (row, center, flex-end);
+    margin-top: 10rem;
+    background-color: rgb(255, 255, 255);
+    padding: 2rem;
+    min-width: 300px;
+    min-height: 300px;
+
+    &__title {
+        color: red;
+    }
+
+    &__description {
+        color: rgb(255, 255, 255);
+    }
+
+    &__imagen {
+        height: 200px;
+        object-fit: cover;
+    }
+}
+
+
