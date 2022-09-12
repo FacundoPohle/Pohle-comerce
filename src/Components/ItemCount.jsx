@@ -22,18 +22,18 @@ function ItemCount ({initial, stock, onAdd}) {
 
     return(
  <div className='row justify-content-center'>
-    <div className='col'>
+    <div className='col text-start'>
         <Button onClick={Plus} variant="danger"><AddCircleIcon/></Button>
     </div>
     <div className='col text-center'>
         {rate}
     </div>
-    <div className='col'>
+    <div className='col text-end'>
         <Button onClick={Minus} variant="danger"><RemoveCircleIcon/></Button>
     </div>
     <div className='row justify-content-center mt-4'>
         {
-            stock && rate > initial
+            stock && rate >= initial
             ?<Button onClick={ () => onAdd(rate)} variant="danger" >Agregar al carrito</Button>
             :<Button variant="danger" >Agregar al carrito</Button>
         }
