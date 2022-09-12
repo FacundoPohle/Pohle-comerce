@@ -1,9 +1,9 @@
 .detail-contenedor {
-    @include flexbox (row, center, flex-end);
+    @include flexbox (column, center, flex-end);
     margin-top: 10rem;
     background-color: rgb(255, 255, 255);
     padding: 2rem;
-    min-width: 300px;
+    width: 300px;
     min-height: 300px;
 
     &__title {
