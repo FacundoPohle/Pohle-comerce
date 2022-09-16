@@ -9,10 +9,10 @@ const ItemList = ({items}) => {
                 items.map(obj => (
                     <Item
                          key={obj.id}
+                         id={obj.id}
                          image={obj.image}
                          name={obj.name}
                          description={obj.description}
-                         price={obj.price}
                          stock={obj.stock}
                          />
                     ))

@@ -33,9 +33,9 @@ function ItemCount ({initial, stock, onAdd}) {
     </div>
     <div className='row justify-content-center mt-4'>
         {
-            stock && rate >= initial
+            stock && rate
             ?<Button onClick={ () => onAdd(rate)} variant="danger" >Agregar al carrito</Button>
-            :<Button variant="danger" >Agregar al carrito</Button>
+            :<Button variant="primary" disabled>Agregar al carrito</Button>
         }
     </div>    
 </div> );

@@ -10,7 +10,7 @@ function NavBar() {
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
-        <Navbar.Brand href="#home" className="py-4">
+        <Navbar.Brand href="/" className="py-4">
         <img
               alt="logo"
               src={logo}
@@ -23,14 +23,12 @@ function NavBar() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#features">Stikers</Nav.Link>
-            <Nav.Link href="#pricing">Drawings</Nav.Link>
-            <NavDropdown title="Categories" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Ambient</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Caracthers
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Scenes</NavDropdown.Item>
+            <Nav.Link href="/category/4">Buzos</Nav.Link>
+            <Nav.Link href="/category/5">Camisetas</Nav.Link>
+            <NavDropdown title="Calzado" id="collasible-nav-dropdown">
+              <NavDropdown.Item href="/category/1">Zapatos</NavDropdown.Item>
+              <NavDropdown.Item href="/category/2">Zapatillas</NavDropdown.Item>
+              <NavDropdown.Item href="/category/3">Alpargatas</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="#action/3.4">
                 Go to my telegram
@@ -38,7 +36,7 @@ function NavBar() {
             </NavDropdown>
           </Nav>
           <Nav>
-            <Nav.Link href="#deets" className="link-danger"><CartWidget/></Nav.Link>
+            <Nav.Link href="/cart" className="link-danger"><CartWidget/></Nav.Link>
             <Nav.Link eventKey={2} href="#memes">
               Preguntas
             </Nav.Link>
