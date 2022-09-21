@@ -8,15 +8,15 @@ const CartContextProvider = ({children}) => {
 
     const addToCart = (product) => {
 
-        setCartList([...cartList, product])
+        setCartList([...cartList, product]);
     }
 
     const removeItem = (id) => {
-       alert ('producto deleted')
+       setCartList(cartList.filter(item => item.id !==id));
     }
 
     const clear = () => {
-
+       setCartList([]);
     }
 
     return (
