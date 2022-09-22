@@ -3,18 +3,20 @@ import { CartContext } from "./CartContext";
 
 const Carrito = () => {
       
-     const myContext = useContext(CartContext)
+     const ctx = useContext(CartContext)
 
   return (
     <div className="row">
-      <div className=" carrito">RESUMEN DE TU PEDIDO</div>
-      <ul>
-      {
-        myContext.cartList.map(item => <li key={item.id}>{item.name} <button onClick={myContext.removeItem}>Delete</button></li>)
-      }
-      </ul>
+    <div className=" carrito">
+      <h1>Resumen de tu pedido</h1>
+    <ul>
+    {
+      ctx.cartList.map(item => <li key={item.id}>{item.name} ${item.price}<button onClick={ctx.removeItem}>Delete</button></li>)
+    }
+    </ul>
+    <button onClick={ctx.clear}>Borrar todo</button>
     </div>
-
+  </div>
   )
 
 }

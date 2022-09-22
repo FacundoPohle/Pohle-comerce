@@ -4,7 +4,7 @@ import NavBar from "./Components/NavBar";
 import './App.scss'
 import ItemListContainer from "./Components/ItemListContainer";
 import ItemDetailContainer from "./Components/itemDetailContainer";
-import Carrito from "./Components/Carrito"
+import Carrito from "./Components/Carrito";
 
 function App() {
   return (
