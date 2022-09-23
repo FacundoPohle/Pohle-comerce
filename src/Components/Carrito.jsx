@@ -11,7 +11,8 @@ const Carrito = () => {
       <h1>Resumen de tu pedido</h1>
     <ul>
     {
-      ctx.cartList.map(item => <li key={item.id}>{item.name} ${item.price}<button onClick={ctx.removeItem}>Delete</button></li>)
+      ctx.cartList.map(item => <li key={item.id}>{item.nameItem} ${item.costItem} {item.qtyItem}
+      <button onClick={()=>ctx.removeItem(item.id)}>Delete</button></li>)
     }
     </ul>
     <button onClick={ctx.clear}>Borrar todo</button>
