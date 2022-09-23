@@ -13,6 +13,7 @@ const CartContextProvider = ({children}) => {
             setCartList([
                 ...cartList,
                 {
+                    idItem: item.id,
                     imgItem: item.image[0],
                     nameItem: item.name,
                     costItem: item.price,
@@ -29,7 +30,7 @@ const CartContextProvider = ({children}) => {
     }
 
     const removeItem = (id) => {
-        let result = cartList.filter(item => item.id !==id);
+        let result = cartList.filter(item => item.idItem !==id);
        setCartList(result);
     }
 

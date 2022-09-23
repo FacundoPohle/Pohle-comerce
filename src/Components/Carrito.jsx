@@ -12,7 +12,7 @@ const Carrito = () => {
     <ul>
     {
       ctx.cartList.map(item => <li key={item.id}>{item.nameItem} ${item.costItem} {item.qtyItem}
-      <button onClick={()=>ctx.removeItem(item.id)}>Delete</button></li>)
+      <button onClick={()=>ctx.removeItem(item.idItem)}>Delete</button></li>)
     }
     </ul>
     <button onClick={ctx.clear}>Borrar todo</button>
