@@ -33,7 +33,9 @@ const ItemDetail = ({ item }) => {
                                     </div>
                               </div>
                         </div>
-                        : <p>Cargando...</p>}
+                        : <div className="spinner-border text-danger spinner" role="status">
+                        <span className="visually-hidden">Loading...</span>
+                      </div>}
             </>
       );
 }

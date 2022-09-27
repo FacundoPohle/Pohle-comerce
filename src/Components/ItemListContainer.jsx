@@ -3,6 +3,7 @@ import customFetch from '../Utils/promesa';
 import dataFromBD from '../Utils/productos';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+// import { db } from '../Utils/firebaseConfig';
 
 
 function ItemListContainer() {
@@ -12,7 +13,7 @@ function ItemListContainer() {
   useEffect(() => {
 
     if(idCategory){
-      customFetch(2000, dataFromBD.filter(item => item.categoryId == idCategory))
+      customFetch(2000, dataFromBD.filter(item => item.categoryId === parseInt(idCategory)))
         .then(result => setData(result))
         .catch(err => console.log(err))
     } else {

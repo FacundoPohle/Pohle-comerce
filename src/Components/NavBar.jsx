@@ -9,30 +9,31 @@ import { Link } from "react-router-dom";
 
 function NavBar() {
   return (
-    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+    <Navbar className='navbar' collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
-        <Link to="/">
+        <Link className='navbar__title d-flex flex-row justify-content-center
+        align-items-center' to="/">
+        <div className='navbar__marca me-3 p-1'>
         <img
               alt="logo"
               src={logo}
-              width="30"
-              height="30"
-              className="d-inline-block align-top"
-            />{' '}
+              className="d-inline-block align-top navbar__image"
+            />
+          </div>{' '}
           NELAIN-ART</Link>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-          <Link to="/category/4">Buzos</Link>
-          <Link to="/category/5">Camisetas</Link>
-            <NavDropdown title="Calzado" id="collasible-nav-dropdown">
-            <Link to="/category/1">Zapatos</Link>
-            <Link to="/category/2">Zapatillas</Link>
-            <Link to="/category/3">Alpargatas</Link>
+          <Link className='navbar__links' to="/category/4">Buzos</Link>
+          <Link className='navbar__links' to="/category/5">Camisetas</Link>
+            <NavDropdown className="d-flex flex-column justify-content-center" title="Calzado" id="collasible-nav-dropdown">
+            <Link className='navbar__links' to="/category/1">Zapatos</Link>
+            <Link className='navbar__links' to="/category/2">Zapatillas</Link>
+            <Link className='navbar__links' to="/category/3">Alpargatas</Link>
             </NavDropdown>
           </Nav>
           <Nav>
-            <Link to="/cart"><CartWidget/></Link>
+            <Link className='navbar__links' to="/cart"><CartWidget/></Link>
             <Nav.Link>
               Preguntas
             </Nav.Link>

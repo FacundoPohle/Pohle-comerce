@@ -25,7 +25,7 @@ function ItemCount ({initial, stock, onAdd}) {
     <div className='col text-start'>
         <Button onClick={Plus} variant="danger"><AddCircleIcon/></Button>
     </div>
-    <div className='col text-center'>
+    <div className='col text-center detail-contenedor__price--2'>
         {rate}
     </div>
     <div className='col text-end'>
@@ -35,7 +35,7 @@ function ItemCount ({initial, stock, onAdd}) {
         {
             stock && rate
             ?<Button onClick={ () => onAdd(rate)} variant="danger" >Agregar al carrito</Button>
-            :<Button variant="primary" disabled>Agregar al carrito</Button>
+            :<Button variant="secondary" disabled>Agregar al carrito</Button>
         }
     </div>    
 </div> );
