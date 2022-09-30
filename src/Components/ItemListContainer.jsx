@@ -24,32 +24,32 @@ function ItemListContainer() {
     async function fetchData() {
       let item;
       if (idCategory) {
-        item = query(collection(db, "products"), where('categoryId', '==', idCategory));
+        item = query(collection(db, "products"), where('categoryId', '==', parseInt(idCategory)));
       } else {
         item = query(collection(db, "products"), orderBy('name'));
       }
       const querySnapshot = await getDocs(item);
-  const dataFromFirestore = querySnapshot.docs.map(item => ({
-    id: item.id,
-    ...item.data()
-  }))
-  setData(dataFromFirestore)
-}
-fetchData();
+      const dataFromFirestore = querySnapshot.docs.map(item => ({
+        id: item.id,
+        ...item.data()
+      }))
+      setData(dataFromFirestore)
+    }
+    fetchData();
   }, [idCategory]);
 
-// useEffect(() => {
-//   return (() => {
-//     setData([]);
-//   })
-// }, [])
+  // useEffect(() => {
+  //   return (() => {
+  //     setData([]);
+  //   })
+  // }, [])
 
 
-return (
-  <div className="row justify-content-around">
-    <ItemList items={data} />
-  </div>
-);
+  return (
+    <div className="row justify-content-around">
+      <ItemList items={data} />
+    </div>
+  );
 }
 
 export default ItemListContainer;
