@@ -3,8 +3,6 @@ import { useEffect, useState } from "react";
 import ItemDetail from "./itemDetail";
 // import dataFromBD from "../Utils/productos";
 import { useParams } from "react-router-dom";
-import { db } from '../Utils/firebaseConfig';
-import { doc, getDoc } from "firebase/firestore";
 import { firestoreFetchOne } from "../Utils/firestoreFetch";
 
 
@@ -17,7 +15,7 @@ const ItemDetailContainer = () => {
          firestoreFetchOne(idItem)
             .then(result => setDato(result))
             .catch(err => console.log(err))
-    }, []);
+    });
 
 
     // useEffect(() => {

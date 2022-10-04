@@ -1,10 +1,42 @@
 import { useContext } from "react";
 import { CartContext } from "./CartContext";
 import { Link } from "react-router-dom";
+import { serverTimestamp, doc, setDoc, collection, increment, updateDoc } from "firebase/firestore";
+import { db } from '../Utils/firebaseConfig';
 
 const Carrito = () => {
 
   const ctx = useContext(CartContext)
+
+  const createOrder = async () => {
+    let itemsForDB = ctx.cartList.map(item => ({
+      id: item.idItem,
+      title: item.nameItem,
+      price: item.costItem,
+      quantity: item.qtyItem
+    }))
+    let order = {
+      buyer: {
+        name:"Facundo Pohle",
+        email: "facundopohle@gmail.com",
+        phone: "3515630626"
+      },
+      date: serverTimestamp(),
+      items: itemsForDB,
+      total: ctx.calcTotal()
+    }
+    
+    const newOrderRef = doc(collection(db, "orders"))
+    await setDoc(newOrderRef, order);
+    alert('Your order has been created. ID Number:' + newOrderRef.id)
+    ctx.clear();
+    itemsForDB.map( async (item) => {
+      const itemRef = doc(db, "products", item.id);
+      await updateDoc(itemRef, {
+        stock: increment(-item.quantity)
+      });
+    })
+  }
 
   return (
     <div>
@@ -38,7 +70,7 @@ const Carrito = () => {
             <p>Total: ${ctx.calcTotal()}</p>
           </div>
           <div>
-            <button className="carrito__checkout">Finalizar compra</button>
+            <button onClick={createOrder} className="carrito__checkout">Finalizar compra</button>
           </div>
         </div>
         }

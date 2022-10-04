@@ -1,7 +1,7 @@
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
 
-function Item({image, name, description, id}) {
+function Item({image, name, description, id, stock}) {
 
   return (
     <div className='col-12 col-lg-3 col-xxl-3'>
@@ -11,6 +11,9 @@ function Item({image, name, description, id}) {
         <Card.Title className="text-center item__description">{name}</Card.Title>
         <Card.Text className="text-center item__description">
         {description}
+        </Card.Text>
+        <Card.Text className="text-center item__description">
+        <span>stock:{' '}</span>{stock}
         </Card.Text>
         <Link to={`/item/${id}`}>Let´s go!</Link>
       </Card.Body>
