@@ -8,6 +8,7 @@ Es un proyecto e-commerce para una empresa de carácter fictisio dedicada a la p
 
 HTML.\
 CSS.\
+SCSS.\
 JAVASCRIPT.
 
 ## Clonación del proyecto:
