@@ -10,6 +10,10 @@ HTML.\
 CSS.\
 JAVASCRIPT.
 
+## Clonación del proyecto:
+
+git clone https://github.com/FacundoPohle/Pohle-comerce
+
 ### Autor
 
 Facundo Julian Pohle Hidalgo.
