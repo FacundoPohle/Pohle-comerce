@@ -15,10 +15,6 @@ function ItemCount ({initial, stock, onAdd}) {
     const Minus = () => {
         rate > initial  && setRate(rate-1)
    }  
-   
-//    const onAdd = () => {
-//        rate > initial  && alert(`you have selected ${rate} items`)
-//   }
 
     return(
  <div className='row justify-content-center'>
