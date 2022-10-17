@@ -1,4 +1,4 @@
-import Item from '../Components/item';
+import Item from './Item';
 
 const ItemList = ({ items }) => {
 

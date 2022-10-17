@@ -1,4 +1,4 @@
-import ItemList from './itemList';
+import ItemList from './ItemList';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { db } from '../Utils/firebaseConfig';
